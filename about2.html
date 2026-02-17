@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Personal | Harsh Vardhan Dubey</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+}
+
+body{
+background:#0f1117;
+color:#f5f7fa;
+overflow-x:hidden;
+}
+
+/* ===== Aurora Glow ===== */
+body::before{
+content:"";
+position:fixed;
+width:900px;
+height:900px;
+background:radial-gradient(circle,#4cc9f0,#ff4d6d);
+filter:blur(220px);
+top:-300px;
+right:-200px;
+opacity:0.12;
+z-index:-1;
+}
+
+/* ===== Main Glass Container ===== */
+.container{
+width:85%;
+max-width:1000px;
+margin:120px auto;
+padding:60px;
+border-radius:30px;
+background:rgba(255,255,255,0.06);
+border:1px solid rgba(255,255,255,0.18);
+backdrop-filter:blur(40px);
+box-shadow:0 40px 120px rgba(0,0,0,0.6);
+position:relative;
+overflow:hidden;
+}
+
+/* Reflection Sweep */
+.container::after{
+content:"";
+position:absolute;
+top:-50%;
+left:-50%;
+width:200%;
+height:200%;
+background:linear-gradient(
+120deg,
+transparent 30%,
+rgba(255,255,255,0.25) 50%,
+transparent 70%
+);
+transform:rotate(25deg);
+animation:shine 10s linear infinite;
+}
+
+@keyframes shine{
+0%{transform:translateX(-100%) rotate(25deg);}
+100%{transform:translateX(100%) rotate(25deg);}
+}
+
+/* ===== Back Button ===== */
+.back{
+display:inline-block;
+margin-bottom:40px;
+padding:10px 24px;
+border-radius:30px;
+background:rgba(255,255,255,0.1);
+border:1px solid rgba(255,255,255,0.25);
+backdrop-filter:blur(20px);
+color:white;
+text-decoration:none;
+font-size:14px;
+transition:0.3s;
+}
+
+.back:hover{
+background:linear-gradient(90deg,#4cc9f0,#ff4d6d);
+box-shadow:0 10px 40px rgba(76,201,240,0.4);
+}
+
+/* ===== Heading ===== */
+h1{
+font-size:48px;
+margin-bottom:25px;
+background:linear-gradient(90deg,#4cc9f0,#ff4d6d);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+p{
+color:#d1d5db;
+line-height:1.7;
+margin-bottom:18px;
+}
+
+/* ===== Interest Cards ===== */
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+margin-top:40px;
+}
+
+.card{
+padding:30px;
+border-radius:20px;
+background:rgba(255,255,255,0.05);
+border:1px solid rgba(255,255,255,0.15);
+backdrop-filter:blur(25px);
+transition:0.4s;
+}
+
+.card:hover{
+transform:translateY(-6px);
+box-shadow:0 20px 60px rgba(76,201,240,0.2);
+}
+
+/* ===== Social Buttons ===== */
+.social{
+margin-top:40px;
+}
+
+.btn{
+display:inline-block;
+padding:10px 22px;
+margin-right:15px;
+margin-top:10px;
+border-radius:40px;
+background:rgba(255,255,255,0.1);
+border:1px solid rgba(255,255,255,0.25);
+backdrop-filter:blur(20px);
+color:white;
+text-decoration:none;
+font-weight:500;
+transition:0.3s;
+}
+
+.btn:hover{
+background:linear-gradient(135deg,#4cc9f0,#4361ee);
+box-shadow:0 10px 30px rgba(76,201,240,0.4);
+transform:translateY(-3px);
+}
+
+/* ===== Footer ===== */
+.footer{
+margin-top:100px;
+text-align:center;
+color:#6b7280;
+font-size:14px;
+}
+
+@media(max-width:768px){
+.container{
+padding:40px;
+}
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<a href="index.html" class="back">← Back to Home</a>
+
+<h1>Beyond Coding</h1>
+
+<p>
+While technology is my core focus, I believe personality shapes performance. Outside coding and problem solving, I invest time in interests that build discipline, creativity, and confidence.
+</p>
+
+<div class="grid">
+
+<div class="card">
+<h3>🏏 Cricket</h3>
+<p>Cricket teaches me patience, strategy, and calm decision-making under pressure — skills that directly reflect in coding and problem solving.</p>
+</div>
+
+<div class="card">
+<h3>👕 Fashion & Style</h3>
+<p>I enjoy experimenting with fashion and presentation. I believe confidence and clarity in appearance reflect mindset and discipline.</p>
+</div>
+
+<div class="card">
+<h3>📈 Growth Mindset</h3>
+<p>Self-improvement, discipline, and consistency are part of my daily routine. I focus on long-term growth rather than short-term results.</p>
+</div>
+
+<div class="card">
+<h3>🎥 Content Creation</h3>
+<p>Through <strong>codewthharsh</strong>, I share my coding journey and simplify tech learning to build a strong community.</p>
+</div>
+
+</div>
+
+<div class="social">
+<h2 style="margin-bottom:15px;">Follow My Journey</h2>
+<a href="https://www.youtube.com/@codewthharsh" class="btn">YouTube</a>
+<a href="https://www.linkedin.com/in/harsh-vardhan-dubey-9700722a8" class="btn">LinkedIn</a>
+<a href="https://www.instagram.com/codewthharsh" class="btn">Instagram</a>
+</div>
+
+<div class="footer">
+© 2026 Harsh Vardhan Dubey
+</div>
+
+</div>
+
+</body>
+</html>

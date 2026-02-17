@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Harsh | Projects</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+}
+
+body{
+min-height:100vh;
+background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+overflow-x:hidden;
+color:white;
+position:relative;
+}
+
+/* ===== Animated Liquid Background ===== */
+body::before{
+content:"";
+position:absolute;
+width:200%;
+height:200%;
+background:
+radial-gradient(circle at 30% 30%,rgba(0,255,255,0.25),transparent),
+radial-gradient(circle at 70% 70%,rgba(0,120,255,0.25),transparent);
+animation:moveBg 18s infinite alternate ease-in-out;
+z-index:-2;
+}
+
+@keyframes moveBg{
+0%{transform:translate(-10%,-10%)}
+100%{transform:translate(10%,10%)}
+}
+
+/* ===== Floating Bubbles ===== */
+.bubble{
+position:absolute;
+border-radius:50%;
+background:rgba(255,255,255,0.08);
+backdrop-filter:blur(15px);
+box-shadow:inset 0 0 25px rgba(255,255,255,0.3);
+animation:float 12s infinite ease-in-out;
+z-index:-1;
+}
+
+.bubble:nth-child(1){width:150px;height:150px;left:10%;top:20%;}
+.bubble:nth-child(2){width:100px;height:100px;right:15%;top:40%;}
+.bubble:nth-child(3){width:200px;height:200px;left:45%;bottom:10%;}
+.bubble:nth-child(4){width:80px;height:80px;right:35%;bottom:25%;}
+
+@keyframes float{
+0%,100%{transform:translateY(0)}
+50%{transform:translateY(-40px)}
+}
+
+/* ===== Header ===== */
+header{
+text-align:center;
+padding:80px 20px 40px;
+}
+
+header h1{
+font-size:42px;
+margin-bottom:10px;
+}
+
+header p{
+opacity:0.8;
+}
+
+/* ===== Projects Grid ===== */
+.projects{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:40px;
+padding:40px 80px 80px;
+}
+
+/* ===== Glass Project Card ===== */
+.card{
+position:relative;
+padding:30px;
+border-radius:30px;
+background:rgba(255,255,255,0.08);
+backdrop-filter:blur(25px);
+box-shadow:0 25px 45px rgba(0,0,0,0.3);
+transition:0.4s;
+overflow:hidden;
+cursor:pointer;
+}
+
+/* Shine */
+.card::before{
+content:"";
+position:absolute;
+top:-50%;
+left:-50%;
+width:200%;
+height:200%;
+background:linear-gradient(120deg,transparent,rgba(255,255,255,0.2),transparent);
+transform:rotate(25deg);
+animation:shine 6s infinite;
+}
+
+@keyframes shine{
+0%{transform:translateX(-100%) rotate(25deg);}
+100%{transform:translateX(100%) rotate(25deg);}
+}
+
+.card:hover{
+transform:scale(1.08) rotateX(5deg) rotateY(-5deg);
+box-shadow:0 30px 60px rgba(0,0,0,0.5);
+}
+
+.card h3{
+margin-bottom:10px;
+}
+
+.card p{
+font-size:14px;
+opacity:0.8;
+margin-bottom:20px;
+}
+
+.btn{
+display:inline-block;
+padding:10px 20px;
+border-radius:30px;
+background:rgba(255,255,255,0.2);
+text-decoration:none;
+color:white;
+transition:0.3s;
+}
+
+.btn:hover{
+background:rgba(255,255,255,0.4);
+transform:scale(1.1);
+}
+
+/* Responsive */
+@media(max-width:900px){
+.projects{padding:40px 30px;}
+}
+
+</style>
+</head>
+<body>
+
+<!-- Floating bubbles -->
+<div class="bubble"></div>
+<div class="bubble"></div>
+<div class="bubble"></div>
+<div class="bubble"></div>
+
+<header>
+<h1>My Projects</h1>
+<p>Liquid Glass Inspired Creations</p>
+</header>
+
+<div class="projects">
+
+<div class="card">
+<h3>TechBazaar E-Commerce</h3>
+<p>Futuristic e-commerce platform with cart, login and glass UI.</p>
+<a href="#" class="btn">View Live</a>
+</div>
+
+<div class="card">
+<h3>AI Chat Application</h3>
+<p>Modern AI chat interface with animated UI and dynamic response system.</p>
+<a href="#" class="btn">View Live</a>
+</div>
+
+<div class="card">
+<h3>Liquid Portfolio</h3>
+<p>Apple inspired mirror glass portfolio with floating bubble effects.</p>
+<a href="#" class="btn">View Live</a>
+</div>
+
+<div class="card">
+<h3>Data Dashboard</h3>
+<p>Interactive data visualization dashboard with dynamic charts.</p>
+<a href="#" class="btn">View Live</a>
+</div>
+
+</div>
+
+</body>
+</html>
